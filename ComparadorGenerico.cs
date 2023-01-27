@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace code_at_cs_treinando_generics
 {
@@ -6,7 +7,8 @@ namespace code_at_cs_treinando_generics
     {
         public static bool Comparar(T valor1, T valor2)
         {
-            return valor1.Equals(valor2);
+            // Nos permite usar o Equals da classe que implementar IEquatable<T>
+            return EqualityComparer<T>.Default.Equals(valor1, valor2);
         }
     }
 }
